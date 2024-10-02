@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Fashion Product Scraper",
+  "version": "1.0",
+  "description": "A Chrome extension to extract product information from e-commerce websites.",
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.zara.com/"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": ["https://www.zara.com/"]
+}
